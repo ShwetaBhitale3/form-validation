@@ -30,27 +30,21 @@ function validate() {
     let e = document.getElementById("email").value;
     let p = document.getElementById("password").value;
 
-    console.log("Username:", u);
-    console.log("Email:", e);
-    console.log("Password:", p);
-
     if (u == "" || e == "" || p == "") {
-        console.log("Validation Failed: Empty fields");
         document.getElementById("message").innerHTML = "All fields are required!";
         return false;
     }
 
     if (p.length < 6) {
-        console.log("Validation Failed: Password too short");
         document.getElementById("message").innerHTML = "Password must be at least 6 characters!";
         return false;
     }
 
-    console.log("Form submitted successfully!");
     alert("Form submitted successfully!");
-    return false;
+    return false; 
 }
 </script>
 
 </body>
 </html>
+
