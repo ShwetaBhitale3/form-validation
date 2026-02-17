@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form Validation</title>
+</head>
+<body>
+
+<h3>Registration Form</h3>
+
+<form onsubmit="return validate()">
+    
+    Username:<br>
+    <input type="text" id="username"><br><br>
+
+    Email:<br>
+    <input type="text" id="email"><br><br>
+
+    Password:<br>
+    <input type="password" id="password"><br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+<p id="message" style="color:red;"></p>
+
+<script>
+function validate() {
+    let u = document.getElementById("username").value;
+    let e = document.getElementById("email").value;
+    let p = document.getElementById("password").value;
+
+    if (u == "" || e == "" || p == "") {
+        document.getElementById("message").innerHTML = "All fields are required!";
+        return false;
+    }
+
+    if (p.length < 6) {
+        document.getElementById("message").innerHTML = "Password must be at least 6 characters!";
+        return false;
+    }
+
+    alert("Form submitted successfully!");
+    return false; 
+}
+</script>
+
+</body>
+</html>
